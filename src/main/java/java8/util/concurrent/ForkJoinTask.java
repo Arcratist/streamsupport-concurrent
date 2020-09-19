@@ -121,8 +121,8 @@ import java8.util.Objects;
  * <p>The ForkJoinTask class is not usually directly subclassed.
  * Instead, you subclass one of the abstract classes that support a
  * particular style of fork/join processing, typically {@link
- * java8.util.concurrent.RecursiveAction} for most computations that
- * do not return results, {@link java8.util.concurrent.RecursiveTask}
+ * java.util.concurrent.RecursiveAction} for most computations that
+ * do not return results, {@link java.util.concurrent.RecursiveTask}
  * for those that do, and {@link java8.util.concurrent.CountedCompleter}
  * for those in which completed actions trigger other actions.
  * Normally, a concrete ForkJoinTask subclass declares
