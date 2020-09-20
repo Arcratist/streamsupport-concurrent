@@ -7,10 +7,10 @@ package java8.util.concurrent;
 
 import java.util.concurrent.Executor;
 
-import java8fix.util.function.BiConsumer;
-import java8fix.util.function.BiFunction;
-import java8fix.util.function.Consumer;
-import java8fix.util.function.Function;
+import java8.util.function.BiConsumer;
+import java8.util.function.BiFunction;
+import java8.util.function.Consumer;
+import java8.util.function.Function;
 
 /**
  * A stage of a possibly asynchronous computation, that performs an

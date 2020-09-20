@@ -19,7 +19,7 @@ import java.security.ProtectionDomain;
  * and termination methods surrounding the main task processing loop.
  * If you do create such a subclass, you will also need to supply a
  * custom {@link ForkJoinPool.ForkJoinWorkerThreadFactory} to
- * <a href="../../../java8/util/concurrent/ForkJoinPool.html#ForkJoinPool-int-java8.util.concurrent.ForkJoinPool.ForkJoinWorkerThreadFactory-java.lang.Thread.UncaughtExceptionHandler-boolean-int-int-int-java8fix.util.function.Predicate-long-java.util.concurrent.TimeUnit-">
+ * <a href="../../../java8/util/concurrent/ForkJoinPool.html#ForkJoinPool-int-java8.util.concurrent.ForkJoinPool.ForkJoinWorkerThreadFactory-java.lang.Thread.UncaughtExceptionHandler-boolean-int-int-int-java8.util.function.Predicate-long-java.util.concurrent.TimeUnit-">
  * use it</a> in a {@code ForkJoinPool}.
  *
  * @since 1.7

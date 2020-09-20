@@ -27,7 +27,7 @@ package java8.util;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import java8fix.util.function.Supplier;
+import java8.util.function.Supplier;
 
 /**
  * This class consists of {@code static} utility methods for operating
@@ -268,13 +268,13 @@ public final class Objects {
      * returns {@code false}.
      *
      * <p><b>API Note:</b><br> This method exists to be used as a
-     * {@link java8fix.util.function.Predicate}, {@code filter(Objects::isNull)}
+     * {@link java8.util.function.Predicate}, {@code filter(Objects::isNull)}
      *
      * @param obj a reference to be checked against {@code null}
      * @return {@code true} if the provided reference is {@code null} otherwise
      * {@code false}
      *
-     * @see java8fix.util.function.Predicate
+     * @see java8.util.function.Predicate
      * @since 1.8
      */
     public static boolean isNull(Object obj) {
@@ -286,13 +286,13 @@ public final class Objects {
      * otherwise returns {@code false}.
      *
      * <p><b>API Note:</b><br> This method exists to be used as a
-     * {@link java8fix.util.function.Predicate}, {@code filter(Objects::nonNull)}
+     * {@link java8.util.function.Predicate}, {@code filter(Objects::nonNull)}
      *
      * @param obj a reference to be checked against {@code null}
      * @return {@code true} if the provided reference is non-{@code null}
      * otherwise {@code false}
      *
-     * @see java8fix.util.function.Predicate
+     * @see java8.util.function.Predicate
      * @since 1.8
      */
     public static boolean nonNull(Object obj) {

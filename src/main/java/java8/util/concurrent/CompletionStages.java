@@ -6,10 +6,9 @@
 package java8.util.concurrent;
 
 import java.util.concurrent.Executor;
-
-import java8fix.util.function.BiFunction;
-import java8fix.util.function.Function;
-import java8fix.util.function.Functions;
+import java8.util.function.BiFunction;
+import java8.util.function.Function;
+import java8.util.function.Functions;
 
 /**
  * A place for static default implementations of the new Java 12

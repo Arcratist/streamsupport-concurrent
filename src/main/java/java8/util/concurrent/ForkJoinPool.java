@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
 import java8.util.Objects;
-import java8fix.util.function.Predicate;
+import java8.util.function.Predicate;
 
 /**
  * An {@link ExecutorService} for running {@link ForkJoinTask}s.
