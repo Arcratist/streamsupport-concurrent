@@ -7,6 +7,11 @@
 package java8.util.concurrent;
 
 import java8.util.Objects;
+import java8fix.util.function.BiConsumer;
+import java8fix.util.function.BiFunction;
+import java8fix.util.function.Consumer;
+import java8fix.util.function.Function;
+import java8fix.util.function.Supplier;
 
 import java.util.Collection;
 import java.util.Comparator;
@@ -24,12 +29,6 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
-
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
  * A {@link Future} that may be explicitly completed (setting its

@@ -6,8 +6,10 @@
 package java8.util.concurrent;
 
 import java.util.concurrent.Executor;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+
+import java8fix.util.function.BiFunction;
+import java8fix.util.function.Function;
+import java8fix.util.function.Functions;
 
 /**
  * A place for static default implementations of the new Java 12
@@ -50,7 +52,7 @@ public final class CompletionStages {
                     }
                 });
             }
-        }).thenCompose(Function.<CompletionStage<T>>identity());
+        }).thenCompose(Functions.<CompletionStage<T>>identity());
     }
 
     /**
@@ -88,7 +90,7 @@ public final class CompletionStages {
                     }
                 }, executor);
             }
-        }).thenCompose(Function.<CompletionStage<T>>identity());
+        }).thenCompose(Functions.<CompletionStage<T>>identity());
     }
 
     /**
@@ -117,7 +119,7 @@ public final class CompletionStages {
             public CompletionStage<T> apply(T r, Throwable ex) {
                 return (ex == null) ? thisStage : fn.apply(ex);
             }
-        }).thenCompose(Function.<CompletionStage<T>>identity());
+        }).thenCompose(Functions.<CompletionStage<T>>identity());
     }
 
     /**
@@ -151,9 +153,9 @@ public final class CompletionStages {
                             public CompletionStage<T> apply(T r1, Throwable ex1) {
                                 return fn.apply(ex1);
                             }
-                        }).thenCompose(Function.<CompletionStage<T>>identity());
+                        }).thenCompose(Functions.<CompletionStage<T>>identity());
             }
-        }).thenCompose(Function.<CompletionStage<T>>identity());
+        }).thenCompose(Functions.<CompletionStage<T>>identity());
     }
 
     /**
@@ -189,9 +191,9 @@ public final class CompletionStages {
                             public CompletionStage<T> apply(T r1, Throwable ex1) {
                                 return fn.apply(ex1);
                             }
-                        }, executor).thenCompose(Function.<CompletionStage<T>>identity());
+                        }, executor).thenCompose(Functions.<CompletionStage<T>>identity());
             }
-        }).thenCompose(Function.<CompletionStage<T>>identity());
+        }).thenCompose(Functions.<CompletionStage<T>>identity());
     }
 
     private CompletionStages() {}
