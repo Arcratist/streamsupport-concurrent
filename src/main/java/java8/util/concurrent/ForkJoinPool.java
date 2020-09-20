@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
 import java8.util.Objects;
-import java8.util.function.Predicate;
+import java.util.function.Predicate;
 
 /**
  * An {@link ExecutorService} for running {@link ForkJoinTask}s.
@@ -651,7 +651,7 @@ public class ForkJoinPool extends AbstractExecutorService {
 //            new RuntimePermission("setContextClassLoader"), // streamsupport changed
             new RuntimePermission("getClassLoader"));
 
-        public final ForkJoinWorkerThread newThread(ForkJoinPool pool) {
+        public final ForkJoinWorkerThread newThread(final ForkJoinPool pool) {
             return AccessController.doPrivileged(
                 new PrivilegedAction<ForkJoinWorkerThread>() {
                     public ForkJoinWorkerThread run() {
@@ -1230,7 +1230,7 @@ public class ForkJoinPool extends AbstractExecutorService {
      * Default idle timeout value (in milliseconds) for the thread
      * triggering quiescence to park waiting for new work
      */
-    private static final long DEFAULT_KEEPALIVE = 60_000L;
+    private static final long DEFAULT_KEEPALIVE = 60000L;
 
     /**
      * Undershoot tolerance for idle timeouts
@@ -2618,7 +2618,7 @@ public class ForkJoinPool extends AbstractExecutorService {
         // In previous versions of this class, this method constructed
         // a task to run ForkJoinTask.invokeAll, but now external
         // invocation of multiple tasks is at least as efficient.
-        ArrayList<Future<T>> futures = new ArrayList<>(tasks.size());
+        ArrayList<Future<T>> futures = new ArrayList<Future<T>>(tasks.size());
 
         try {
             for (Callable<T> t : tasks) {
@@ -3310,7 +3310,7 @@ public class ForkJoinPool extends AbstractExecutorService {
     private static final long MODE;
     private static final int ABASE;
     private static final int ASHIFT;
-    private static final Class<?> ACTCLASS;
+    private static final Class<?> ACTCLASS = CompletableFuture.AsynchronousCompletionTask.class;
 
     static {
         try {
@@ -3350,18 +3350,6 @@ public class ForkJoinPool extends AbstractExecutorService {
                         return new ForkJoinPool((byte)0); }});
 
         COMMON_PARALLELISM = Math.max(common.mode & SMASK, 1);
-        // attempt to load CompletableFuture.AsynchronousCompletionTask
-        {
-            Class<?> c = null;
-            try {
-                c = Class
-                        .forName("java8.util.concurrent.CompletableFuture$AsynchronousCompletionTask");
-            } catch (Exception ign) {
-                // ignore
-            } finally {
-                ACTCLASS = c;
-            }
-        }
     }
 
     /**
@@ -3381,7 +3369,7 @@ public class ForkJoinPool extends AbstractExecutorService {
             new RuntimePermission("getClassLoader"),
             new RuntimePermission("setContextClassLoader"));
 
-        public final ForkJoinWorkerThread newThread(ForkJoinPool pool) {
+        public final ForkJoinWorkerThread newThread(final ForkJoinPool pool) {
             return AccessController.doPrivileged(
                 new PrivilegedAction<ForkJoinWorkerThread>() {
                     public ForkJoinWorkerThread run() {

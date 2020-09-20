@@ -27,7 +27,7 @@ package java8.util;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import java8.util.function.Supplier;
+import java.util.function.Supplier;
 
 /**
  * This class consists of {@code static} utility methods for operating

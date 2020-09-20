@@ -25,11 +25,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 
-import java8.util.function.BiConsumer;
-import java8.util.function.BiFunction;
-import java8.util.function.Consumer;
-import java8.util.function.Function;
-import java8.util.function.Supplier;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * A {@link Future} that may be explicitly completed (setting its

@@ -399,7 +399,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
 
     /** Reference queue of stale exceptionally completed tasks. */
     private static final ReferenceQueue<ForkJoinTask<?>> exceptionTableRefQueue
-        = new ReferenceQueue<>();
+        = new ReferenceQueue<ForkJoinTask<?>>();
 
     /**
      * Key-value nodes for exception table.  The chained hash table
