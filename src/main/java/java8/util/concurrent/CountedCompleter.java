@@ -77,7 +77,7 @@ package java8.util.concurrent;
  *
  * <p><b>Parallel recursive decomposition.</b> CountedCompleters may
  * be arranged in trees similar to those often used with {@link
- * java8.util.concurrent.RecursiveAction}s, although the constructions involved in setting
+ * java.util.concurrent.RecursiveAction}s, although the constructions involved in setting
  * them up typically vary. Here, the completer of each task is its
  * parent in the computation tree. Even though they entail a bit more
  * bookkeeping, CountedCompleters may be better choices when applying
